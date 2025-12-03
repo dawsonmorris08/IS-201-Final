@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dawson's Hobbies Scratch Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Custom CSS 2 ONLY -->
+  <link rel="stylesheet" href="custom2.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html">← Back to Professional Site</a>
+    <a href="#favorites">Jump to Favorites</a>
+    <a href="webapp.html">Play My Web App</a>
+  </nav>
+
+  <header class="scratch-header">
+    <h1>Dawson's Tech &amp; Travel Scratch Page</h1>
+    <p>This page was built completely from scratch using custom HTML and CSS.</p>
+  </header>
+
+  <!-- Three positioned divs for content -->
+  <section class="three-panels">
+    <div class="panel panel-1">
+      <h2>Why I Like Coding</h2>
+      <p>
+        Coding lets me take ideas from my head and turn them into real, working tools.
+        Even simple HTML and CSS can create polished, useful sites.
+      </p>
+    </div>
+
+    <div class="panel panel-2">
+      <h2>Top Learning Goals</h2>
+      <!-- Ordered list with nested unordered list -->
+      <ol>
+        <li>
+          Web Development
+          <ul>
+            <li>Master HTML &amp; CSS layout</li>
+            <li>Get comfortable with JavaScript</li>
+            <li>Build full-stack projects in the future</li>
+          </ul>
+        </li>
+        <li>
+          Data &amp; Analytics
+          <ul>
+            <li>Use Excel and SQL more powerfully</li>
+            <li>Tell stories with data visualizations</li>
+          </ul>
+        </li>
+        <li>Improve my Spanish while learning tech vocabulary</li>
+      </ol>
+    </div>
+
+    <div class="panel panel-3" id="favorites">
+      <h2>Favorite Tech Setup</h2>
+      <p>Here’s a fun example setup I like for studying and working on projects:</p>
+      <ul>
+        <li>Laptop with external monitor</li>
+        <li>Noise-cancelling headphones</li>
+        <li>Notebook for quick sketches and ideas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Image not from Bootstrap theme -->
+  <section class="image-section">
+    <h2>Study Vibes</h2>
+    <img
+      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+      alt="Desk with laptop and notebook"
+      class="study-image"
+    />
+    <p class="caption">
+      A calm setup makes it easier to focus on code and coursework.
+    </p>
+  </section>
+
+  <!-- Embedded YouTube video -->
+  <section class="video-section">
+    <h2>Motivational Coding Video</h2>
+    <p>Here’s a YouTube video that’s motivating when learning to code:</p>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video"
+        style="border: 0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- Tableau embed (clean HTML5 iframe) -->
+  <section class="tableau-section">
+    <h2>Interactive Tableau Visualization</h2>
+    <p>
+      This is an embedded Tableau Public visualization. You can replace this with
+      your own Tableau project later if you’d like.
+    </p>
+    <div class="tableau-wrapper">
+      <iframe
+        src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms?:showVizHome=no&amp;:embed=true"
+        title="Tableau visualization: Regional Storms"
+        style="width: 100%; height: 600px; border: 0;"
+      ></iframe>
+    </div>
+  </section>
+
+  <footer class="scratch-footer">
+    <p>
+      Scratch page built by Dawson Morris for IS 201 – includes custom HTML, CSS, YouTube, Tableau, and links to an AI-assisted web app.
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* Custom CSS 2 - scratch page styles */
+
+/* Background color (custom) and font family + color */
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(180deg, #f4f7ff, #e2ecff);
+  color: #222;
+}
+
+/* Simple top nav */
+.top-nav {
+  background-color: #1f3c88;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.top-nav a {
+  color: #f9f9f9;
+  margin: 0 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Header section */
+.scratch-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.scratch-header h1 {
+  color: #1f3c88;
+}
+
+/* THREE PANELS - at least three divs positioned and styled */
+.three-panels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.25rem;
+  max-width: 380px;
+  flex: 1 1 260px;
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: #1f3c88;
+}
+
+/* Image section */
+.image-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.study-image {
+  max-width: 90%;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Video responsive wrapper */
+.video-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tableau area */
+.tableau-section {
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+}
+
+.tableau-section h2 {
+  color: #1f3c88;
+}
+
+/* Footer */
+.scratch-footer {
+  background-color: #1f3c88;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
