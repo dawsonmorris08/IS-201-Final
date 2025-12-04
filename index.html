@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dawson Morris | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Custom CSS 1 -->
+  <link rel="stylesheet" href="custom1.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Dawson Morris</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resume.html">Résumé</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="scratch.html">Scratch Page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="py-5 hero-section">
+    <div class="container text-center text-light">
+      <h1 class="display-4 fw-bold">Information Systems & Business Student</h1>
+      <p class="lead mb-4">
+        BYU student passionate about technology, data, and solving real-world problems.
+      </p>
+      <a href="resume.html" class="btn btn-light btn-lg me-2">View Résumé</a>
+      <a href="scratch.html" class="btn btn-outline-light btn-lg">See Scratch Page</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <h2>About Me</h2>
+          <p>
+            I’m Dawson Morris, an Information Systems student at Brigham Young University.
+            I enjoy building clean, functional websites, working with data, and learning tools
+            that help businesses make better decisions.
+          </p>
+          <p>
+            Outside of class, I work at Macey’s Grocery Store and love learning new tech,
+            improving processes, and helping customers have a great experience.
+          </p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
+            class="img-fluid rounded shadow"
+            alt="Laptop on desk"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Highlights</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Education</h5>
+              <p class="card-text">
+                B.S. in Information Systems (in progress) at
+                Brigham Young University, Provo, UT.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Experience</h5>
+              <p class="card-text">
+                Front-line experience at Macey’s Grocery Store with customer
+                service, teamwork, and time management in a fast-paced environment.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Skills</h5>
+              <ul>
+                <li>HTML, CSS, basic JavaScript</li>
+                <li>Excel / data analysis</li>
+                <li>Customer service & leadership</li>
+                <li>Spanish (conversational)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-primary text-light">
+    <div class="container text-center small">
+      <p class="mb-1">&copy; <span id="year"></span> Dawson Morris</p>
+      <p class="mb-0">
+        Hosted on <a href="https://github.com" class="text-light text-decoration-underline">GitHub Pages</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

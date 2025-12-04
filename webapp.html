@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guessing Game Web App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* All styles contained in this file */
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0d6efd 0, #020824 55%);
+      color: #f9f9f9;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-wrapper {
+      background-color: rgba(0, 0, 0, 0.45);
+      border-radius: 1.25rem;
+      padding: 2rem 2.5rem;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    .status {
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      margin: 1rem 0;
+      background-color: rgba(255, 255, 255, 0.08);
+      min-height: 2.5rem;
+    }
+
+    .status.correct {
+      background-color: rgba(40, 167, 69, 0.25);
+    }
+
+    .status.too-high,
+    .status.too-low {
+      background-color: rgba(255, 193, 7, 0.25);
+    }
+
+    .status.error {
+      background-color: rgba(220, 53, 69, 0.35);
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    input[type="number"] {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+      color: #fff;
+    }
+
+    .stats {
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 1.5rem;
+      text-align: center;
+      color: #f9f9f9;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrapper">
+    <h1>Number Guessing Game</h1>
+    <p>
+      I picked a secret number between <strong>1</strong> and <strong>100</strong>.
+      Try to guess it in as few attempts as possible!
+    </p>
+
+    <div class="status" id="status">Make your first guess to get started.</div>
+
+    <div class="controls">
+      <input type="number" id="guessInput" placeholder="Enter your guess" />
+      <button class="btn-primary" id="guessBtn">Guess</button>
+    </div>
+
+    <div class="stats">
+      <span id="attempts">Attempts: 0</span>
+      <span id="bestScore">Best game: —</span>
+    </div>
+
+    <button class="btn-secondary" id="resetBtn" style="margin-top: 1rem;">
+      New Number
+    </button>
+
+    <a href="scratch.html" class="back-link">← Back to Scratch Page</a>
+  </div>
+
+  <script>
+    // JavaScript for the guessing game
+    let secretNumber;
+    let attempts;
+    let bestScore = null;
+
+    const statusBox = document.getElementById("status");
+    const guessInput = document.getElementById("guessInput");
+    const attemptsSpan = document.getElementById("attempts");
+    const bestScoreSpan = document.getElementById("bestScore");
+    const guessBtn = document.getElementById("guessBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    function startNewGame() {
+      secretNumber = Math.floor(Math.random() * 100) + 1;
+      attempts = 0;
+      attemptsSpan.textContent = "Attempts: 0";
+      statusBox.textContent = "Make your first guess to get started.";
+      statusBox.className = "status";
+      guessInput.value = "";
+      guessInput.focus();
+    }
+
+    function updateBestScore() {
+      if (bestScore === null || attempts < bestScore) {
+        bestScore = attempts;
+        bestScoreSpan.textContent = "Best game: " + bestScore + " tries";
+      }
+    }
+
+    function handleGuess() {
+      const value = parseInt(guessInput.value, 10);
+      if (isNaN(value) || value < 1 || value > 100) {
+        statusBox.textContent = "Please enter a whole number between 1 and 100.";
+        statusBox.className = "status error";
+        return;
+      }
+
+      attempts++;
+      attemptsSpan.textContent = "Attempts: " + attempts;
+
+      if (value === secretNumber) {
+        statusBox.textContent =
+          "Correct! The number was " +
+          secretNumber +
+          ". You guessed it in " +
+          attempts +
+          " attempts.";
+        statusBox.className = "status correct";
+        updateBestScore();
+      } else if (value > secretNumber) {
+        statusBox.textContent = "Too high! Try a smaller number.";
+        statusBox.className = "status too-high";
+      } else {
+        statusBox.textContent = "Too low! Try a larger number.";
+        statusBox.className = "status too-low";
+      }
+
+      guessInput.select();
+    }
+
+    guessBtn.addEventListener("click", handleGuess);
+    guessInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        handleGuess();
+      }
+    });
+    resetBtn.addEventListener("click", startNewGame);
+
+    // Initialize
+    startNewGame();
+  </script>
+</body>
+</html>
